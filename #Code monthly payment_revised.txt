@@ -1,0 +1,36 @@
+#Code monthly payment
+#p=priciple
+#r=rate
+#n=number_of_months
+#i_r=interest_rate
+import math
+
+print("Monthly Payment Calculator")
+
+Y = True
+loan = 0
+while Y == True:
+  print(" ")
+  #priciple
+  p = float(input("How much is the loan?"))
+  i_r = float(input("Annual interest rate (i.e., 6.5)?"))
+  #rate
+  r = float((i_r/12/100))
+  years = float(input("How many years?"))
+  #number_of_months
+  n = float(years * 12)
+  
+  Total = float(p*(r*(1+r)**n)/(((1+r)**n)-1))
+  P = "{:.2f}".format(Total)
+  print(f"Payment is ${P}")
+  more = input("Go again (Y/N)?")
+  loan = int(loan + 1)
+  if more == "Y" or more == "y":
+    continue
+  else:
+    break
+print(" ")
+print(f"Loans processed today: {loan}")
+  
+
+
